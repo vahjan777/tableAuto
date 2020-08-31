@@ -1,4 +1,4 @@
-export const autoJson = [
+export const auto = [
     {
         "Model": "Supercharged 'Blower' Bentley Single-Seater",
         "Brand": "Bentley",

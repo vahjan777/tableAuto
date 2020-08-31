@@ -1,8 +1,9 @@
 import './styles/index.css';
-import {autoJson} from "../carsJson/autoJson.js";
-let autoJsonb = JSON.stringify(autoJson);
-localStorage.setItem('cars', autoJsonb);
+import {auto} from "../carsJson/autoJson.js";
+let autoJson = JSON.stringify(auto);
+localStorage.setItem('cars', autoJson);
 
+const container = document.getElementById('container');
 const tBodyId = document.getElementById('tBodyId');
 let getCars = JSON.parse(localStorage.getItem('cars'));
 let btnNum = 0;
@@ -26,6 +27,8 @@ createSlice();
 
 function createTableBody (el) {
     const row = document.createElement('tr');
+    row.setAttribute('draggable', 'true')
+    row.classList.add('row');
     const boxBrand = document.createElement('th');
     boxBrand.innerHTML = el.Brand;
     const boxModel = document.createElement('th');
@@ -38,18 +41,21 @@ function createTableBody (el) {
     boxTransmission.innerHTML = el.Transmission;
     const boxHP = document.createElement('th');
     boxHP.innerHTML = el.Horsepower + 'hp';
+    const boxDelete = document.createElement('th');
+    boxDelete.innerHTML = '<i><img src="../svg/delete.svg" style="width: 20px" alt=""></i>';
     row.appendChild(boxBrand);
     row.appendChild(boxModel);
     row.appendChild(boxDate);
     row.appendChild(boxColor);
     row.appendChild(boxTransmission);
     row.appendChild(boxHP);
-    tBodyId.appendChild(row)
+    row.appendChild(boxDelete);
+    tBodyId.appendChild(row);
 }
 
 
 
-let numOfTables = getCars.length / 10 > Math.floor(getCars.length / 10) ? Math.floor(getCars.length / 10) + 1 : getCars.length / 10;
+let numOfTables = Math.ceil(getCars.length / 10);
 
 
 const buttonsDiv = document.getElementById('buttonsDiv');
@@ -82,3 +88,44 @@ document.getElementById('next').addEventListener('click', () => {
         createSlice(btnNum);
     }
 })
+
+
+    const deleteImg = document.querySelectorAll('img');
+    deleteImg.forEach((el) => {
+        el.addEventListener('click', () => {
+            const deleteWindow = document.createElement('div');
+            deleteWindow.classList.add('deleteWindow');
+            const text = document.createElement('p');
+            text.innerHTML = 'Are you sure you want to delete?';
+            const btnDiv = document.createElement('div');
+            btnDiv.classList.add('btnDiv');
+            const deleteBtn = document.createElement('input');
+            deleteBtn.type = 'button';
+            deleteBtn.value = 'Delete';
+            const cancelBtn = document.createElement('input');
+            cancelBtn.type = 'button';
+            cancelBtn.value = 'Cancel';
+            deleteWindow.appendChild(text);
+            btnDiv.appendChild(deleteBtn);
+            btnDiv.appendChild(cancelBtn);
+            deleteWindow.appendChild(btnDiv);
+            container.appendChild(deleteWindow);
+        })
+    })
+
+// drag and drop
+
+tBodyId.addEventListener("dragover", () => {dragOver()});
+tBodyId.addEventListener("drop",() => {dragDrop()});
+const drag = document.querySelectorAll('.row');
+
+
+function dragOver(event) {
+    console.log('dragover');
+    event.preventDefault();
+}
+
+function dragDrop() {
+    console.log('drop');
+    this.append(drag);
+}

@@ -27,3 +27,29 @@ body {
     justify-content: center;
 }
 
+.deleteWindow {
+    position: absolute;
+    z-index: 10;
+    width: 250px;
+    height: 150px;
+    border: black 2px solid;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin-top: -480px;
+    margin-left: 200px;
+}
+
+.deleteWindow p {
+    margin-top: 30px;
+}
+
+.deleteWindow div {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.row {
+    border: #919090 1px solid;
+}
