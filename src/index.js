@@ -1,4 +1,8 @@
 import './styles/index.css';
+import {autoJson} from "../carsJson/autoJson.js";
+let autoJsonb = JSON.stringify(autoJson);
+localStorage.setItem('cars', autoJsonb);
+
 const tBodyId = document.getElementById('tBodyId');
 let getCars = JSON.parse(localStorage.getItem('cars'));
 let btnNum = 0;
