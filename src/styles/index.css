@@ -35,8 +35,6 @@ body {
     border-radius: 5px;
     background-color: #f4f4f4;
     text-align: center;
-    margin-top: -480px;
-    margin-left: 200px;
 }
 
 .deleteWindow p {
@@ -51,4 +49,16 @@ body {
 
 .row {
     border: #919090 1px solid;
+}
+
+.drag {
+    cursor: move;
+}
+
+.drag.over {
+    border: 3px dotted #666;
+}
+
+.dragging {
+    opacity: .5;
 }

@@ -32,14 +32,14 @@ function createSlice() {
     }
     let getTableArr = getCars.slice(slice1, slice2);
      //tBodyId.innerHTML = "";
-     clearTabel();
+     clearTable();
     getTableArr.forEach((el) => createTableBody(el));
     initDeleteListeners();
     initPaging();
 }
 
 
-function clearTabel () {
+function clearTable () {
     brand.innerHTML = "";
     model.innerHTML = "";
     date.innerHTML = "";
@@ -121,8 +121,9 @@ function initDeleteListeners() {
             const deleteBtn = document.createElement('input');
             deleteBtn.type = 'button';
             deleteBtn.value = 'Delete';
-            deleteBtn.addEventListener('click', () => {
+            deleteBtn.addEventListener('click', oldChild => {
                 const closestTr = el.closest('div');
+                console.log(closestTr);
                 let _model = null;
                 for (let i = 0; i < closestTr.childNodes.length; i++) {
                     if (closestTr.childNodes[i].className === "model") {
@@ -137,13 +138,15 @@ function initDeleteListeners() {
                 localStorage.setItem('cars', JSON.stringify(getCars));
 
                 createSlice();
-                removeElementsByClass('deleteWindow');
+                let deleteWindow = document.getElementsByClassName('deleteWindow');
+                while (deleteWindow.length > 0) deleteWindow[0].remove();
             });
             const cancelBtn = document.createElement('input');
             cancelBtn.type = 'button';
             cancelBtn.value = 'Cancel';
             cancelBtn.addEventListener('click', () => {
-                removeElementsByClass('deleteWindow');
+                let deleteWindow = document.getElementsByClassName('deleteWindow');
+                while (deleteWindow.length > 0) deleteWindow[0].remove();
             });
             deleteWindow.appendChild(text);
             btnDiv.appendChild(deleteBtn);
@@ -163,9 +166,9 @@ initDeleteListeners();
 // tBodyId.addEventListener("dragover", () => { dragOver() });
 // tBodyId.addEventListener("drop", () => { dragDrop() });
 // const drag = document.querySelectorAll('.row');
-function onDragStar(e) {
-    this.style.opacity = '0.4';  // this / e.target is the source node.
-  }
+// function onDragStar(e) {
+//     this.style.opacity = '0.4';  // this / e.target is the source node.
+//   }
 
 
 // function dragOver(event) {
@@ -185,3 +188,71 @@ function onDragStar(e) {
 //         elements[0].parentNode.removeChild(elements[0]);
 //     }
 // }
+
+// document.addEventListener('DOMContentLoaded', (event) => {
+//
+//     function handleDragStart(e) {
+//         this.style.opacity = '0.4';
+//         let dragSrcEl = this;
+//         e.dataTransfer.effectAllowed = 'move';
+//         e.dataTransfer.setData('text/html', this.innerHTML);
+//     }
+//
+//     function handleDragEnd(e) {
+//         this.style.opacity = '1';
+//
+//         items.forEach(function (item) {
+//             item.classList.remove('over');
+//         });
+//     }
+//
+//     function handleDragOver(e) {
+//         if (e.preventDefault) {
+//             e.preventDefault();
+//         }
+//
+//         return false;
+//     }
+//
+//     function handleDragEnter(e) {
+//         this.classList.add('over');
+//     }
+//
+//     function handleDragLeave(e) {
+//         this.classList.remove('over');
+//     }
+//
+//     function handleDrop(e) {
+//         e.stopPropagation(); // stops the browser from redirecting.
+//         return false;
+//     }
+//
+//
+//     let items = document.querySelectorAll('.table .drag');
+//     items.forEach(function(item) {
+//         item.addEventListener('dragstart', handleDragStart, false);
+//         item.addEventListener('dragover', handleDragOver, false);
+//         item.addEventListener('dragenter', handleDragEnter, false);
+//         item.addEventListener('dragleave', handleDragLeave, false);
+//         item.addEventListener('dragend', handleDragEnd, false);
+//         item.addEventListener('dragdrop',handleDrop,false);
+//     });
+// });
+
+
+const drag = document.querySelectorAll('.drag');
+const table = document.querySelector('.table');
+
+drag.forEach(draggable => {
+    draggable.addEventListener('dragstart', () => {
+        draggable.classList.add('dragging')
+    })
+    draggable.addEventListener('dragend', () =>{
+        draggable.classList.remove('dragging')
+    })
+})
+
+table.addEventListener('dragover', () =>{
+    const draggable = document.querySelector('.drag');
+    table.appendChild(draggable);
+})
