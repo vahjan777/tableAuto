@@ -9,9 +9,8 @@ body {
     justify-content: center;
 }
 .table {
-    border: 2px #747373 solid;
-    height: 40px;
-    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .button {

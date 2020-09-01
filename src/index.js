@@ -6,8 +6,16 @@ if (localStorage.getItem('cars') == null) {
 }
 
 
+const brand = document.getElementById('brand');
+const model = document.getElementById('model');
+const date = document.getElementById('date');
+const color = document.getElementById('color');
+const transmission = document.getElementById('transmission');
+const hp = document.getElementById('hp');
+const del = document.getElementById('del');
+
+
 const container = document.getElementById('container');
-const tBodyId = document.getElementById('tBodyId');
 let getCars = JSON.parse(localStorage.getItem('cars'));
 let btnNum = 0;
 let numOfTables = Math.ceil(getCars.length / 10);
@@ -23,39 +31,49 @@ function createSlice() {
         slice2 = 10;
     }
     let getTableArr = getCars.slice(slice1, slice2);
-    tBodyId.innerHTML = "";
+     //tBodyId.innerHTML = "";
+     clearTabel();
     getTableArr.forEach((el) => createTableBody(el));
     initDeleteListeners();
     initPaging();
 }
 
+
+function clearTabel () {
+    brand.innerHTML = "";
+    model.innerHTML = "";
+    date.innerHTML = "";
+    color.innerHTML = "";
+    transmission.innerHTML = "";
+    hp.innerHTML = "";
+    del.innerHTML = ""
+}
+
 createSlice();
 
 function createTableBody(el) {
-    const row = document.createElement('tr');
-    const boxBrand = document.createElement('th');
+    const boxBrand = document.createElement('div');
     boxBrand.innerHTML = el.Brand;
-    const boxModel = document.createElement('th');
+    const boxModel = document.createElement('div');
     boxModel.innerHTML = el.Model;
     boxModel.classList.add('model');
-    const boxDate = document.createElement('th');
+    const boxDate = document.createElement('div');
     boxDate.innerHTML = el.Date;
-    const boxColor = document.createElement('th');
+    const boxColor = document.createElement('div');
     boxColor.innerHTML = el.Color;
-    const boxTransmission = document.createElement('th');
+    const boxTransmission = document.createElement('div');
     boxTransmission.innerHTML = el.Transmission;
-    const boxHP = document.createElement('th');
+    const boxHP = document.createElement('div');
     boxHP.innerHTML = el.Horsepower + 'hp';
-    const boxDelete = document.createElement('th');
-    boxDelete.innerHTML = '<i><img src="../svg/delete.svg" style="width: 20px" alt=""></i>';
-    row.appendChild(boxBrand);
-    row.appendChild(boxModel);
-    row.appendChild(boxDate);
-    row.appendChild(boxColor);
-    row.appendChild(boxTransmission);
-    row.appendChild(boxHP);
-    row.appendChild(boxDelete);
-    tBodyId.appendChild(row);
+    const boxDelete = document.createElement('div');
+    boxDelete.innerHTML = '<i><img src="../svg/delete.svg" style="width: 12px" alt=""></i>';
+    brand.appendChild(boxBrand);
+    model.appendChild(boxModel);
+    date.appendChild(boxDate);
+    color.appendChild(boxColor);
+    transmission.appendChild(boxTransmission);
+    hp.appendChild(boxHP);
+    del.appendChild(boxDelete);
 }
 
 function initPaging() {
@@ -104,7 +122,7 @@ function initDeleteListeners() {
             deleteBtn.type = 'button';
             deleteBtn.value = 'Delete';
             deleteBtn.addEventListener('click', () => {
-                const closestTr = el.closest('tr');
+                const closestTr = el.closest('div');
                 let _model = null;
                 for (let i = 0; i < closestTr.childNodes.length; i++) {
                     if (closestTr.childNodes[i].className === "model") {
@@ -145,7 +163,9 @@ initDeleteListeners();
 // tBodyId.addEventListener("dragover", () => { dragOver() });
 // tBodyId.addEventListener("drop", () => { dragDrop() });
 // const drag = document.querySelectorAll('.row');
-
+function onDragStar(e) {
+    this.style.opacity = '0.4';  // this / e.target is the source node.
+  }
 
 
 // function dragOver(event) {
