@@ -10,6 +10,7 @@ const container = document.getElementById('container');
 const tBodyId = document.getElementById('tBodyId');
 let getCars = JSON.parse(localStorage.getItem('cars'));
 let btnNum = 0;
+let numOfTables = Math.ceil(getCars.length / 10);
 
 function createSlice() {
     let slice1,
@@ -32,8 +33,6 @@ createSlice();
 
 function createTableBody(el) {
     const row = document.createElement('tr');
-    row.setAttribute('draggable', 'true')
-    row.classList.add('row');
     const boxBrand = document.createElement('th');
     boxBrand.innerHTML = el.Brand;
     const boxModel = document.createElement('th');
@@ -59,11 +58,9 @@ function createTableBody(el) {
     tBodyId.appendChild(row);
 }
 
-
 function initPaging() {
-    let numOfTables = Math.ceil(getCars.length / 10);
     const buttonsDiv = document.getElementById('buttonsDiv');
-    buttonsDiv.innerHTML = '';
+        buttonsDiv.innerHTML = '';
     for (let i = 0; i < numOfTables; i++) {
         const button = document.createElement('input');
         button.type = 'button';
@@ -145,26 +142,26 @@ initDeleteListeners();
 
 // drag and drop
 
-tBodyId.addEventListener("dragover", () => { dragOver() });
-tBodyId.addEventListener("drop", () => { dragDrop() });
-const drag = document.querySelectorAll('.row');
+// tBodyId.addEventListener("dragover", () => { dragOver() });
+// tBodyId.addEventListener("drop", () => { dragDrop() });
+// const drag = document.querySelectorAll('.row');
 
 
 
-function dragOver(event) {
-    console.log('dragover');
-    event.preventDefault();
-}
+// function dragOver(event) {
+//     console.log('dragover');
+//     event.preventDefault();
+// }
 
-function dragDrop() {
-    console.log('drop');
-    this.append(drag);
-}
+// function dragDrop() {
+//     console.log('drop');
+//     this.append(drag);
+// }
 
 
-function removeElementsByClass(className) {
-    let elements = document.getElementsByClassName(className);
-    while (elements.length > 0) {
-        elements[0].parentNode.removeChild(elements[0]);
-    }
-}
+// function removeElementsByClass(className) {
+//     let elements = document.getElementsByClassName(className);
+//     while (elements.length > 0) {
+//         elements[0].parentNode.removeChild(elements[0]);
+//     }
+// }
