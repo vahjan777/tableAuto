@@ -62,12 +62,8 @@ function createTableBody(el) {
 
 function initPaging() {
     let numOfTables = Math.ceil(getCars.length / 10);
-
-
     const buttonsDiv = document.getElementById('buttonsDiv');
-
     buttonsDiv.innerHTML = '';
-
     for (let i = 0; i < numOfTables; i++) {
         const button = document.createElement('input');
         button.type = 'button';
@@ -112,14 +108,14 @@ function initDeleteListeners() {
             deleteBtn.value = 'Delete';
             deleteBtn.addEventListener('click', () => {
                 const closestTr = el.closest('tr');
-                var _model = null;
-                for (var i = 0; i < closestTr.childNodes.length; i++) {
-                    if (closestTr.childNodes[i].className == "model") {
+                let _model = null;
+                for (let i = 0; i < closestTr.childNodes.length; i++) {
+                    if (closestTr.childNodes[i].className === "model") {
                         _model = closestTr.childNodes[i].innerHTML;
                         break;
                     }
                 }
-                getCars = getCars.filter(function (obj) {
+                getCars = getCars.filter( (obj) => {
                     return obj.Model !== _model;
                 });
 
@@ -165,9 +161,9 @@ function dragDrop() {
     this.append(drag);
 }
 
-// TODO: move to separate file
+
 function removeElementsByClass(className) {
-    var elements = document.getElementsByClassName(className);
+    let elements = document.getElementsByClassName(className);
     while (elements.length > 0) {
         elements[0].parentNode.removeChild(elements[0]);
     }
