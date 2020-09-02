@@ -1,6 +1,14 @@
 import './styles/index.css';
 import { auto } from "../carsJson/autoJson.js";
-let autoJson = JSON.stringify(auto);
+let autoA = auto;
+
+let autoB = autoA.map((el) => {
+    el.id = Math.floor(Math.random() * 999999);
+    return el
+})
+
+
+let autoJson = JSON.stringify(autoB);
 if (localStorage.getItem('cars') == null) {
     localStorage.setItem('cars', autoJson);
 }
@@ -31,7 +39,6 @@ function createSlice() {
         slice2 = 10;
     }
     let getTableArr = getCars.slice(slice1, slice2);
-     //tBodyId.innerHTML = "";
      clearTable();
     getTableArr.forEach((el) => createTableBody(el));
     initDeleteListeners();
@@ -66,6 +73,7 @@ function createTableBody(el) {
     const boxHP = document.createElement('div');
     boxHP.innerHTML = el.Horsepower + 'hp';
     const boxDelete = document.createElement('div');
+    boxDelete.setAttribute('id', el.id)
     boxDelete.innerHTML = '<i><img src="../svg/delete.svg" style="width: 12px" alt=""></i>';
     brand.appendChild(boxBrand);
     model.appendChild(boxModel);
@@ -118,21 +126,15 @@ function initDeleteListeners() {
             text.innerHTML = 'Are you sure you want to delete?';
             const btnDiv = document.createElement('div');
             btnDiv.classList.add('btnDiv');
+
+
             const deleteBtn = document.createElement('input');
             deleteBtn.type = 'button';
             deleteBtn.value = 'Delete';
             deleteBtn.addEventListener('click', oldChild => {
                 const closestTr = el.closest('div');
-                console.log(closestTr);
-                let _model = null;
-                for (let i = 0; i < closestTr.childNodes.length; i++) {
-                    if (closestTr.childNodes[i].className === "model") {
-                        _model = closestTr.childNodes[i].innerHTML;
-                        break;
-                    }
-                }
                 getCars = getCars.filter( (obj) => {
-                    return obj.Model !== _model;
+                    return obj.id !== +closestTr.id;
                 });
 
                 localStorage.setItem('cars', JSON.stringify(getCars));
@@ -141,6 +143,8 @@ function initDeleteListeners() {
                 let deleteWindow = document.getElementsByClassName('deleteWindow');
                 while (deleteWindow.length > 0) deleteWindow[0].remove();
             });
+            
+            
             const cancelBtn = document.createElement('input');
             cancelBtn.type = 'button';
             cancelBtn.value = 'Cancel';
@@ -158,86 +162,6 @@ function initDeleteListeners() {
 }
 
 initDeleteListeners();
-
-
-
-// drag and drop
-
-// tBodyId.addEventListener("dragover", () => { dragOver() });
-// tBodyId.addEventListener("drop", () => { dragDrop() });
-// const drag = document.querySelectorAll('.row');
-// function onDragStar(e) {
-//     this.style.opacity = '0.4';  // this / e.target is the source node.
-//   }
-
-
-// function dragOver(event) {
-//     console.log('dragover');
-//     event.preventDefault();
-// }
-
-// function dragDrop() {
-//     console.log('drop');
-//     this.append(drag);
-// }
-
-
-// function removeElementsByClass(className) {
-//     let elements = document.getElementsByClassName(className);
-//     while (elements.length > 0) {
-//         elements[0].parentNode.removeChild(elements[0]);
-//     }
-// }
-
-// document.addEventListener('DOMContentLoaded', (event) => {
-//
-//     function handleDragStart(e) {
-//         this.style.opacity = '0.4';
-//         let dragSrcEl = this;
-//         e.dataTransfer.effectAllowed = 'move';
-//         e.dataTransfer.setData('text/html', this.innerHTML);
-//     }
-//
-//     function handleDragEnd(e) {
-//         this.style.opacity = '1';
-//
-//         items.forEach(function (item) {
-//             item.classList.remove('over');
-//         });
-//     }
-//
-//     function handleDragOver(e) {
-//         if (e.preventDefault) {
-//             e.preventDefault();
-//         }
-//
-//         return false;
-//     }
-//
-//     function handleDragEnter(e) {
-//         this.classList.add('over');
-//     }
-//
-//     function handleDragLeave(e) {
-//         this.classList.remove('over');
-//     }
-//
-//     function handleDrop(e) {
-//         e.stopPropagation(); // stops the browser from redirecting.
-//         return false;
-//     }
-//
-//
-//     let items = document.querySelectorAll('.table .drag');
-//     items.forEach(function(item) {
-//         item.addEventListener('dragstart', handleDragStart, false);
-//         item.addEventListener('dragover', handleDragOver, false);
-//         item.addEventListener('dragenter', handleDragEnter, false);
-//         item.addEventListener('dragleave', handleDragLeave, false);
-//         item.addEventListener('dragend', handleDragEnd, false);
-//         item.addEventListener('dragdrop',handleDrop,false);
-//     });
-// });
 
 
 const drag = document.querySelectorAll('.drag');
