@@ -13,6 +13,13 @@ if (localStorage.getItem('cars') == null) {
     localStorage.setItem('cars', autoJson);
 }
 
+const addBrand = document.getElementById('addBrand');
+const addDate = document.getElementById('addDate');
+const addTransmission = document.getElementById('addTransmission');
+const addModel = document.getElementById('addModel');
+const addColor = document.getElementById('addColor');
+const addHP = document.getElementById('addHP');
+const createNewCar = document.getElementById('createNewCar');
 
 const brand = document.getElementById('brand');
 const model = document.getElementById('model');
@@ -22,10 +29,10 @@ const transmission = document.getElementById('transmission');
 const hp = document.getElementById('hp');
 const del = document.getElementById('del');
 
-
 const container = document.getElementById('container');
 let getCars = JSON.parse(localStorage.getItem('cars'));
 let btnNum = 0;
+let getTableArr;
 let numOfTables = Math.ceil(getCars.length / 10);
 
 function createSlice() {
@@ -38,13 +45,12 @@ function createSlice() {
         slice1 = 0;
         slice2 = 10;
     }
-    let getTableArr = getCars.slice(slice1, slice2);
+    getTableArr = getCars.slice(slice1, slice2);
      clearTable();
     getTableArr.forEach((el) => createTableBody(el));
     initDeleteListeners();
     initPaging();
 }
-
 
 function clearTable () {
     brand.innerHTML = "";
@@ -59,6 +65,7 @@ function clearTable () {
 createSlice();
 
 function createTableBody(el) {
+    debugger;
     const boxBrand = document.createElement('div');
     boxBrand.innerHTML = el.Brand;
     const boxModel = document.createElement('div');
@@ -107,7 +114,8 @@ document.getElementById('back').addEventListener('click', () => {
         btnNum--;
         createSlice(btnNum);
     }
-})
+});
+
 
 document.getElementById('next').addEventListener('click', () => {
     if (btnNum < numOfTables - 1) {
@@ -138,10 +146,19 @@ function initDeleteListeners() {
                 });
 
                 localStorage.setItem('cars', JSON.stringify(getCars));
+                numOfTables = Math.ceil(getCars.length / 10);
+                initPaging();
 
-                createSlice();
+                if (getTableArr.length === 0) {
+                    console.log('zro');
+                    btnNum--;
+                    createSlice(btnNum);
+                } else { 
+                    createSlice(btnNum);
+                }
                 let deleteWindow = document.getElementsByClassName('deleteWindow');
                 while (deleteWindow.length > 0) deleteWindow[0].remove();
+
             });
             
             
@@ -163,6 +180,7 @@ function initDeleteListeners() {
 
 initDeleteListeners();
 
+//drag and drop
 
 const drag = document.querySelectorAll('.drag');
 const table = document.querySelector('.table');
@@ -174,9 +192,32 @@ drag.forEach(draggable => {
     draggable.addEventListener('dragend', () =>{
         draggable.classList.remove('dragging')
     })
-})
+});
 
 table.addEventListener('dragover', () =>{
     const draggable = document.querySelector('.drag');
     table.appendChild(draggable);
-})
+});
+
+//add new car
+
+
+    createNewCar.addEventListener('click', ()=> {
+        const newCarObj = {};
+        newCarObj.Brand = addBrand.value;
+        newCarObj.Date = addBrand.value;
+        newCarObj.Transmission = addTransmission.value;
+        newCarObj.Model = addModel.value;
+        newCarObj.Color = addColor.value;
+        newCarObj.Horsepower = addHP.value;
+        newCarObj.id = Math.floor(Math.random() * 999999);
+
+        getCars.unshift (newCarObj);
+        localStorage.setItem('cars', JSON.stringify(getCars));
+        numOfTables = Math.ceil(getCars.length / 10);
+        createSlice();
+        initPaging();
+
+        console.log(newCarObj)
+    })
+

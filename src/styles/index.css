@@ -62,3 +62,11 @@ body {
 .dragging {
     opacity: .5;
 }
+
+.addWindow {
+    z-index: 15;
+    widows: 600px;
+    height: 400px;
+    border: 2px solid #6e6e6e;
+    position: absolute;
+}
