@@ -1,17 +1,13 @@
 import './styles/index.css';
-import { auto } from "../carsJson/autoJson.js";
-let autoA = auto;
+import {auto} from "../carsJson/autoJson.js";
 
-let autoB = autoA.map((el) => {
-    el.id = Math.floor(Math.random() * 999999);
-    return el
-})
+let autoArrId = auto.map((el) => {
+    el.id = Math.floor(Math.random() * 9999999);
+    return el;
+});
 
-
-let autoJson = JSON.stringify(autoB);
-if (localStorage.getItem('cars') == null) {
-    localStorage.setItem('cars', autoJson);
-}
+let autoJson = JSON.stringify(autoArrId);
+localStorage.setItem('cars', autoJson);
 
 const addBrand = document.getElementById('addBrand');
 const addDate = document.getElementById('addDate');
@@ -59,13 +55,12 @@ function clearTable () {
     color.innerHTML = "";
     transmission.innerHTML = "";
     hp.innerHTML = "";
-    del.innerHTML = ""
+    del.innerHTML = "";
 }
 
 createSlice();
 
 function createTableBody(el) {
-    debugger;
     const boxBrand = document.createElement('div');
     boxBrand.innerHTML = el.Brand;
     const boxModel = document.createElement('div');
@@ -80,7 +75,7 @@ function createTableBody(el) {
     const boxHP = document.createElement('div');
     boxHP.innerHTML = el.Horsepower + 'hp';
     const boxDelete = document.createElement('div');
-    boxDelete.setAttribute('id', el.id)
+    boxDelete.setAttribute('id', el.id);
     boxDelete.innerHTML = '<i><img src="../svg/delete.svg" style="width: 12px" alt=""></i>';
     brand.appendChild(boxBrand);
     model.appendChild(boxModel);
@@ -106,21 +101,21 @@ function initPaging() {
 
 function buttonClick(e) {
     btnNum = e;
-    createSlice(btnNum);
+    createSlice();
 }
 
 document.getElementById('back').addEventListener('click', () => {
-    if (btnNum) {
+    if(btnNum) {
         btnNum--;
-        createSlice(btnNum);
+        createSlice();
     }
 });
 
 
 document.getElementById('next').addEventListener('click', () => {
-    if (btnNum < numOfTables - 1) {
+    if(btnNum < numOfTables - 1) {
         btnNum++;
-        createSlice(btnNum);
+        createSlice();
     }
 })
 
@@ -139,7 +134,7 @@ function initDeleteListeners() {
             const deleteBtn = document.createElement('input');
             deleteBtn.type = 'button';
             deleteBtn.value = 'Delete';
-            deleteBtn.addEventListener('click', oldChild => {
+            deleteBtn.addEventListener('click', () => {
                 const closestTr = el.closest('div');
                 getCars = getCars.filter( (obj) => {
                     return obj.id !== +closestTr.id;
@@ -148,13 +143,12 @@ function initDeleteListeners() {
                 localStorage.setItem('cars', JSON.stringify(getCars));
                 numOfTables = Math.ceil(getCars.length / 10);
                 initPaging();
-
+                createSlice();
                 if (getTableArr.length === 0) {
-                    console.log('zro');
                     btnNum--;
-                    createSlice(btnNum);
-                } else { 
-                    createSlice(btnNum);
+                    createSlice();
+                } else {
+                    createSlice();
                 }
                 let deleteWindow = document.getElementsByClassName('deleteWindow');
                 while (deleteWindow.length > 0) deleteWindow[0].remove();
@@ -187,10 +181,10 @@ const table = document.querySelector('.table');
 
 drag.forEach(draggable => {
     draggable.addEventListener('dragstart', () => {
-        draggable.classList.add('dragging')
+        draggable.classList.add('dragging');
     })
     draggable.addEventListener('dragend', () =>{
-        draggable.classList.remove('dragging')
+        draggable.classList.remove('dragging');
     })
 });
 
@@ -201,11 +195,17 @@ table.addEventListener('dragover', () =>{
 
 //add new car
 
+const addNewCar = document.getElementById('addNewCar');
+const addCarWidow = document.getElementById('addCarWidow');
+addNewCar.addEventListener('click', () => {
+    addCarWidow.style.display = 'block';
+})
+
 
     createNewCar.addEventListener('click', ()=> {
         const newCarObj = {};
         newCarObj.Brand = addBrand.value;
-        newCarObj.Date = addBrand.value;
+        newCarObj.Date = addDate.value;
         newCarObj.Transmission = addTransmission.value;
         newCarObj.Model = addModel.value;
         newCarObj.Color = addColor.value;
@@ -217,7 +217,12 @@ table.addEventListener('dragover', () =>{
         numOfTables = Math.ceil(getCars.length / 10);
         createSlice();
         initPaging();
-
-        console.log(newCarObj)
+        addCarWidow.style.display = 'none';
+        addBrand.value = '';
+        addDate.value = '';
+        addTransmission.value = '';
+        addModel.value = '';
+        addColor.value = '';
+        addHP.value = '';
     })
 

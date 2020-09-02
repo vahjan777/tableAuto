@@ -5,41 +5,41 @@
     <title>AutoTable</title>
 </head>
 <body>
-    <div id="container">
-        <div class="table">
-
-            <div id="brandCont" draggable="true" class="drag">
+    <div id="container" style="margin-top: 20px">
+        <div style="display: flex;">
+            <div class="table">
+            <div id="brandCont" draggable="true" class="drag" style="text-align: center; width: 370px">
                 <div class="" style="background-color: #1963a3">Brand</div>
                 <div id="brand"></div>
             </div>
 
-            <div id="modelCont" draggable="true" class="drag" style="margin-left: 5px;">
+            <div id="modelCont" draggable="true" class="drag" style="margin-left: 5px; width: 370px; text-align: center">
                 <div class="" style="background-color: #e1ad19">Model</div>
                 <div id="model"></div>
             </div>
 
-            <div id="dateCont" draggable="true" class="drag" style="margin-left: 5px;">
+            <div id="dateCont" draggable="true" class="drag" style="margin-left: 5px; width: 50px; text-align: center">
                 <div class="" style="background-color: #fb3a5f">Date</div>
                 <div id="date"></div>
             </div>
 
-            <div id="colorCont" draggable="true" class="drag" style="margin-left: 5px;">
+            <div id="colorCont" draggable="true" class="drag" style="margin-left: 5px; width: 85px; text-align: center">
                 <div class="" style="background-color: #6d6c6c">Color</div>
                 <div id="color"></div>
             </div>
 
-            <div id="transmissionCont" draggable="true" class="drag" style="margin-left: 5px;">
+            <div id="transmissionCont" draggable="true" class="drag" style="margin-left: 5px; width: 100px; text-align: center">
                 <div class="" style="background-color: #919090">Transmission</div>
                 <div id="transmission"></div>
             </div>
 
-            <div id="hpCont" draggable="true" class="drag" style="margin-left: 5px;">
+            <div id="hpCont" draggable="true" class="drag" style="margin-left: 5px; width: 70px; text-align: center">
                 <div class="" style="background-color: #c7cac7">HP</div>
                 <div id="hp"></div>
             </div>  
-            
-            <div id="delCont" draggable="true" class="drag" style="margin-left: 5px;">
-                <div class="" style="background-color: #58e958; width: 20px; text-align: center;" id="add">+</div>
+            </div>
+            <div id="delCont" draggable="true" class="drag" style="margin-left: 5px; width: 60px; text-align: center">
+                <div class="" style="background-color: #58e958; text-align: center;" id="addNewCar">+</div>
                 <div id="del"></div>
             </div> 
 
@@ -50,23 +50,27 @@
             <button type="button" id="next" class="button"> > </button>
         </div>
 
-    <div>
-        <div>
-            <label form="addBrand">Brand <input type="text" id="addBrand"> </label>
-            <label> Date <input type="text" id="addDate"> </label>
-            <label>Transmission <input type="text" id="addTransmission"> </label>
-
-
+        <div id="addCarWidow" style="display: none; margin-top: 30px">
+            <div>
+                <form>
+                    <label>Brand</label>
+                    <label> <input type="text" id="addBrand"> </label>
+                    <label> Date </label>
+                    <label> <input type="text" id="addDate"> </label>
+                    <label>Transmission </label>
+                    <label> <input type="text" id="addTransmission"> </label>
+                </form>
+            </div>
+            <div>
+                <form>
+                    <label> Model <input type="text" id="addModel"> </label>
+                    <label> Color <input type="text" id="addColor"> </label>
+                    <label> HP <input type="text" id="addHP"> </label>
+                </form>
+            </div>
+            <button type="button" id="createNewCar"> Create </button>
         </div>
-        <div>
 
-            <label> Model <input type="text" id="addModel"> </label>
-            <label> Color <input type="text" id="addColor"> </label>
-            <label> HP <input type="text" id="addHP"> </label>
-
-        </div>
-        <button type="button" id="createNewCar"> Create </button>
-    </div>
     </div>
 
 <script src="../dist/boundle.js"></script>

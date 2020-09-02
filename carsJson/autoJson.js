@@ -200,23 +200,23 @@ export const auto = [
         "Class": "Sports"
     },
     {
-        "Model": "De Dion, Bouton et TrÃ©pardoux Dos-Ã -Dos Steam Runabout \"La Marquise\"",
-        "Brand": "De Dion, Bouton et TrÃ©pardoux Dos-Ã -Dos Steam Runabout",
+        "Model": "De Dion, Bouton ",
+        "Brand": "De Dion, Bouton et t",
         "Date": "1884",
         "Horsepower": "250",
         "Transmission": "Automatic",
         "Class": "Sports"
     },
     {
-        "Model": "De Dion, Bouton et TrÃ©pardoux Dos-Ã -Dos Steam Runabout \"La Marquise\"",
-        "Brand": "De Dion, Bouton et TrÃ©pardoux Dos-Ã -Dos Steam Runabout",
+        "Model": "De Dion, Bouton et ",
+        "Brand": "De Dion, Bouton et ",
         "Date": "1884",
         "Horsepower": "184",
         "Transmission": "Automatic",
         "Class": "Sedan"
     },
     {
-        "Model": "Delahaye 135 Competition Court Torpedo Roadster",
+        "Model": "Delahaye 135 ",
         "Brand": "Delahaye",
         "Date": "1939",
         "Horsepower": "184",
@@ -224,7 +224,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Delahaye Type 175S Roadster",
+        "Model": "Delahaye Type 175S",
         "Brand": "Delahaye",
         "Date": "1949",
         "Horsepower": "184",
@@ -232,7 +232,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Duesenberg Model J Long-Wheelbase Coupe",
+        "Model": "Duesenberg Model J ",
         "Brand": "Duesenberg",
         "Date": "1931",
         "Horsepower": "184",
@@ -240,7 +240,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Duesenberg Model SJ Convertible Coupe",
+        "Model": "Duesenberg Model",
         "Brand": "Duesenberg",
         "Date": "1935",
         "Horsepower": "184",
@@ -256,7 +256,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Duesenberg SJ Speedster \"Mormon Meteor\"",
+        "Model": "Duesenberg SJ ",
         "Brand": "Duesenberg",
         "Date": "1935",
         "Horsepower": "225",
@@ -264,7 +264,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 166 MM Barchetta",
+        "Model": "Ferrari 166 MM",
         "Brand": "Ferrari",
         "Date": "1950",
         "Horsepower": "225",
@@ -272,7 +272,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 212 Export Berlinetta",
+        "Model": "Ferrari 212 Export ",
         "Brand": "Ferrari",
         "Date": "1951",
         "Horsepower": "225",
@@ -288,7 +288,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 GT Berlinetta Competizione",
+        "Model": "Ferrari 250 GT",
         "Brand": "Ferrari",
         "Date": "1955",
         "Horsepower": "225",
@@ -312,7 +312,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 GT California LWB Competizione Spyder",
+        "Model": "Ferrari 250 GT",
         "Brand": "Ferrari",
         "Date": "1960",
         "Horsepower": "325",
@@ -320,7 +320,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 GT California LWB Prototype Spyder",
+        "Model": "Ferrari 250 GT ",
         "Brand": "Ferrari",
         "Date": "1957",
         "Horsepower": "333",
@@ -328,7 +328,7 @@ export const auto = [
         "Class": "Sports"
     },
     {
-        "Model": "Ferrari 250 GT LWB 'Tour de France' Berlinetta",
+        "Model": "Ferrari 250 GT ",
         "Brand": "Ferrari",
         "Date": "1958",
         "Horsepower": "333",
@@ -336,7 +336,7 @@ export const auto = [
         "Class": "Sports"
     },
     {
-        "Model": "Ferrari 250 GT LWB Berlinetta 'Tour de France'",
+        "Model": "Ferrari 250 GT ",
         "Brand": "Ferrari",
         "Date": "1956",
         "Horsepower": "225",
@@ -344,7 +344,7 @@ export const auto = [
         "Class": "SUV"
     },
     {
-        "Model": "Ferrari 250 GT LWB Berlinetta Tour de France",
+        "Model": "Ferrari 250 GT",
         "Brand": "Ferrari",
         "Date": "1959",
         "Horsepower": "325",
@@ -352,7 +352,7 @@ export const auto = [
         "Class": "SUV"
     },
     {
-        "Model": "Ferrari 250 GT LWB California",
+        "Model": "Ferrari 250 GT ",
         "Brand": "Ferrari",
         "Date": "1959",
         "Horsepower": "184",
@@ -360,7 +360,7 @@ export const auto = [
         "Class": "Sports"
     },
     {
-        "Model": "Ferrari 250 GT LWB California Competizione Spider",
+        "Model": "Ferrari 250 GT ",
         "Brand": "Ferrari",
         "Date": "1959",
         "Horsepower": "225",
@@ -368,7 +368,7 @@ export const auto = [
         "Class": "Sports"
     },
     {
-        "Model": "Ferrari 250 GT LWB California Spider",
+        "Model": "Ferrari 250 GT ",
         "Brand": "Ferrari",
         "Date": "1958",
         "Horsepower": "175",
@@ -376,7 +376,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 GT LWB California Spider",
+        "Model": "Ferrari 250 GT ",
         "Brand": "Ferrari",
         "Date": "1958",
         "Horsepower": "205",
@@ -384,7 +384,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 GT LWB California Spider",
+        "Model": "Ferrari 250 GT",
         "Brand": "Ferrari",
         "Date": "1958",
         "Horsepower": "205",
@@ -392,7 +392,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 GT LWB California Spider",
+        "Model": "Ferrari 250 GT ",
         "Brand": "Ferrari",
         "Date": "1959",
         "Horsepower": "205",
@@ -400,7 +400,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 GT LWB California Spider",
+        "Model": "Ferrari 250 GT ",
         "Brand": "Ferrari",
         "Date": "1959",
         "Horsepower": "240",
@@ -408,7 +408,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 GT LWB Tour de France",
+        "Model": "Ferrari 250 GT ",
         "Brand": "Ferrari",
         "Date": "1958",
         "Horsepower": "275",
@@ -424,7 +424,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 GT Series 1 Cabriolet",
+        "Model": "Ferrari 250 GT",
         "Brand": "Ferrari",
         "Date": "1958",
         "Horsepower": "200",
@@ -432,7 +432,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 GT Series I Cabriolet",
+        "Model": "Ferrari 250 GT",
         "Brand": "Ferrari",
         "Date": "1959",
         "Horsepower": "185",
@@ -440,7 +440,7 @@ export const auto = [
         "Class": "SUV"
     },
     {
-        "Model": "Ferrari 250 GT SWB \"Competition\" Berlinetta Speciale",
+        "Model": "Ferrari 250 GT",
         "Brand": "Ferrari",
         "Date": "1959",
         "Horsepower": "255",
@@ -448,7 +448,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 GT SWB Berlinetta Competizione",
+        "Model": "Ferrari 250 GT",
         "Brand": "Ferrari",
         "Date": "1960",
         "Horsepower": "275",
@@ -456,7 +456,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 GT SWB California Spider",
+        "Model": "Ferrari 250 GT",
         "Brand": "Ferrari",
         "Date": "1961",
         "Horsepower": "300",
@@ -464,7 +464,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 GT SWB California Spider",
+        "Model": "Ferrari 250 GT",
         "Brand": "Ferrari",
         "Date": "1961",
         "Horsepower": "295",
@@ -472,7 +472,7 @@ export const auto = [
         "Class": "SUV"
     },
     {
-        "Model": "Ferrari 250 GT SWB California Spyder",
+        "Model": "Ferrari 250 GT",
         "Brand": "Ferrari",
         "Date": "1962",
         "Horsepower": "275",
@@ -480,7 +480,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 GT SWB Speciale Aerodinamica",
+        "Model": "Ferrari 250 GT",
         "Brand": "Ferrari",
         "Date": "1962",
         "Horsepower": "320",
@@ -528,7 +528,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 LWB California Spider Competizione",
+        "Model": "Ferrari 250 LWB ",
         "Brand": "Ferrari",
         "Date": "1959",
         "Horsepower": "140",
@@ -536,7 +536,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 MM Berlinetta",
+        "Model": "Ferrari 250 MM ",
         "Brand": "Ferrari",
         "Date": "1953",
         "Horsepower": "140",
@@ -544,7 +544,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 SWB Berlinetta",
+        "Model": "Ferrari 250 SWB",
         "Brand": "Ferrari",
         "Date": "1961",
         "Horsepower": "350",
@@ -552,7 +552,7 @@ export const auto = [
         "Class": "Sports"
     },
     {
-        "Model": "Ferrari 250 SWB Berlinetta",
+        "Model": "Ferrari 250 SWB ",
         "Brand": "Ferrari",
         "Date": "1962",
         "Horsepower": "350",
@@ -560,7 +560,7 @@ export const auto = [
         "Class": "Sports"
     },
     {
-        "Model": "Ferrari 250 SWB Berlinetta Competizione",
+        "Model": "Ferrari 250 SWB ",
         "Brand": "Ferrari",
         "Date": "1960",
         "Horsepower": "180",
@@ -568,7 +568,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 SWB California Spider",
+        "Model": "Ferrari 250 SWB ",
         "Brand": "Ferrari",
         "Date": "1960",
         "Horsepower": "200",
@@ -576,7 +576,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 SWB California Spider",
+        "Model": "Ferrari 250 SWB",
         "Brand": "Ferrari",
         "Date": "1962",
         "Horsepower": "240",
@@ -584,7 +584,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 250 SWB Competizione \"SEFAC Hot Rod\"",
+        "Model": "Ferrari 250 SWB",
         "Brand": "Ferrari",
         "Date": "1961",
         "Horsepower": "145",
@@ -624,7 +624,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 275 GTB Long ose Alloy",
+        "Model": "Ferrari 275 GTB Long",
         "Brand": "Ferrari",
         "Date": "1965",
         "Horsepower": "200",
@@ -648,7 +648,7 @@ export const auto = [
         "Class": "SUV"
     },
     {
-        "Model": "Ferrari 275 GTB/4 ART Spyder Alloy",
+        "Model": "Ferrari 275 GTB/4 ",
         "Brand": "Ferrari",
         "Date": "1967",
         "Horsepower": "165",
@@ -656,7 +656,7 @@ export const auto = [
         "Class": "SUV"
     },
     {
-        "Model": "Ferrari 275 GTB/4*S ART Spider",
+        "Model": "Ferrari 275 GTB/4S",
         "Brand": "Ferrari",
         "Date": "1967",
         "Horsepower": "275",
@@ -672,7 +672,7 @@ export const auto = [
         "Class": "Minivan"
     },
     {
-        "Model": "Ferrari 275 GTB/C Speciale",
+        "Model": "Ferrari 275 GTB/C",
         "Brand": "Ferrari",
         "Date": "1964",
         "Horsepower": "250",
@@ -688,7 +688,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 330 TRI/LM Spider",
+        "Model": "Ferrari 330 TRI",
         "Brand": "Ferrari",
         "Date": "1962",
         "Horsepower": "200",
@@ -696,7 +696,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 330 TRI/LM Spider",
+        "Model": "Ferrari 330 TRI",
         "Brand": "Ferrari",
         "Date": "1962",
         "Horsepower": "232",
@@ -712,7 +712,7 @@ export const auto = [
         "Class": "Sports"
     },
     {
-        "Model": "Ferrari 340 Mexico Berlinetta",
+        "Model": "Ferrari 340 Mexico",
         "Brand": "Ferrari",
         "Date": "1952",
         "Horsepower": "250",
@@ -720,7 +720,7 @@ export const auto = [
         "Class": "Wagon"
     },
     {
-        "Model": "Ferrari 340 Mexico Coupe",
+        "Model": "Ferrari 340 Mexico",
         "Brand": "Ferrari",
         "Date": "1952",
         "Horsepower": "150",
@@ -728,7 +728,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 340 MM Competition Spyder",
+        "Model": "Ferrari 340 MM",
         "Brand": "Ferrari",
         "Date": "1953",
         "Horsepower": "220",
@@ -744,7 +744,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 340/375 MM Berlinetta 'Competizione'",
+        "Model": "Ferrari 340/375",
         "Brand": "Ferrari",
         "Date": "1953",
         "Horsepower": "150",
@@ -752,7 +752,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 340/375 MM Berlinetta Competizione",
+        "Model": "Ferrari 340/375",
         "Brand": "Ferrari",
         "Date": "1953",
         "Horsepower": "200",
@@ -760,7 +760,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 375 MM Berlinetta",
+        "Model": "Ferrari 375 MM",
         "Brand": "Ferrari",
         "Date": "1955",
         "Horsepower": "150",
@@ -768,7 +768,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 375 MM Berlinetta",
+        "Model": "Ferrari 375 MM",
         "Brand": "Ferrari",
         "Date": "1962",
         "Horsepower": "200",
@@ -776,7 +776,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 375 MM Spider",
+        "Model": "Ferrari 375 MM",
         "Brand": "Ferrari",
         "Date": "1953",
         "Horsepower": "180",
@@ -784,7 +784,7 @@ export const auto = [
         "Class": "Minivan"
     },
     {
-        "Model": "Ferrari 375-Plus Spider Competizione",
+        "Model": "Ferrari 375-Plus",
         "Brand": "Ferrari",
         "Date": "1954",
         "Horsepower": "215",
@@ -792,7 +792,7 @@ export const auto = [
         "Class": "Minivan"
     },
     {
-        "Model": "Ferrari 400 Superamerica",
+        "Model": "Ferrari 400 ",
         "Brand": "Ferrari",
         "Date": "1962",
         "Horsepower": "150",
@@ -800,7 +800,7 @@ export const auto = [
         "Class": "Minivan"
     },
     {
-        "Model": "Ferrari 400 Superamerica",
+        "Model": "Ferrari 400 Super",
         "Brand": "Ferrari",
         "Date": "1962",
         "Horsepower": "230",
@@ -832,7 +832,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 500 Mondial Spider Series I",
+        "Model": "Ferrari 500 Mondial ",
         "Brand": "Ferrari",
         "Date": "1954",
         "Horsepower": "132",
@@ -872,7 +872,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 625 TRC Spider",
+        "Model": "Ferrari 625 TRC ",
         "Brand": "Ferrari",
         "Date": "1957",
         "Horsepower": "224",
@@ -880,7 +880,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Ferrari 750 Monza Spider",
+        "Model": "Ferrari 750 Monza ",
         "Brand": "Ferrari",
         "Date": "1955",
         "Horsepower": "239",
@@ -968,7 +968,7 @@ export const auto = [
         "Class": "Minivan"
     },
     {
-        "Model": "Horch 853A Special Roadster",
+        "Model": "Horch 853A Special",
         "Brand": "Horch",
         "Date": "1939",
         "Horsepower": "193",
@@ -1032,7 +1032,7 @@ export const auto = [
         "Class": "Minivan"
     },
     {
-        "Model": "Maserati 450S Prototype",
+        "Model": "Maserati 450S ",
         "Brand": "Maserati",
         "Date": "1956",
         "Horsepower": "285",
@@ -1040,7 +1040,7 @@ export const auto = [
         "Class": "SUV"
     },
     {
-        "Model": "Maserati A6G/2000 Spyder",
+        "Model": "Maserati A6G/2000 ",
         "Brand": "Maserati",
         "Date": "1955",
         "Horsepower": "325",
@@ -1080,7 +1080,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "McLaren F1 GTR Longtail",
+        "Model": "McLaren F1 GTR ",
         "Brand": "McLaren",
         "Date": "1997",
         "Horsepower": "127",
@@ -1104,7 +1104,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Mercedes-Benz 38/250 SSK",
+        "Model": "Mercedes-Benz ",
         "Brand": "Mercedes-Benz",
         "Date": "1929",
         "Horsepower": "115",
@@ -1112,7 +1112,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Mercedes-Benz 500K Roadster",
+        "Model": "Mercedes-Benz 500K ",
         "Brand": "Mercedes-Benz",
         "Date": "1935",
         "Horsepower": "160",
@@ -1120,7 +1120,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Mercedes-Benz 540K Special Roadster",
+        "Model": "Mercedes-Benz 540K ",
         "Brand": "Mercedes-Benz",
         "Date": "1936",
         "Horsepower": "93",
@@ -1128,7 +1128,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Mercedes-Benz 540K Special Roadster",
+        "Model": "Mercedes-Benz 540K ",
         "Brand": "Mercedes-Benz",
         "Date": "1937",
         "Horsepower": "160",
@@ -1136,7 +1136,7 @@ export const auto = [
         "Class": "SUV"
     },
     {
-        "Model": "Mercedes-Benz 540K Special Roadster",
+        "Model": "Mercedes-Benz 540K",
         "Brand": "Mercedes-Benz",
         "Date": "1939",
         "Horsepower": "160",
@@ -1144,7 +1144,7 @@ export const auto = [
         "Class": "SUV"
     },
     {
-        "Model": "Mercedes-Benz 540K Spezial Coupe",
+        "Model": "Mercedes-Benz 540K",
         "Brand": "Mercedes-Benz",
         "Date": "1936",
         "Horsepower": "73",
@@ -1152,7 +1152,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Mercedes-Benz 540K Spezial Roadster",
+        "Model": "Mercedes-Benz 540K",
         "Brand": "Mercedes-Benz",
         "Date": "1937",
         "Horsepower": "240",
@@ -1160,7 +1160,7 @@ export const auto = [
         "Class": "Minivan"
     },
     {
-        "Model": "Mercedes-Benz 540K Spezial Roadster",
+        "Model": "Mercedes-Benz 540K",
         "Brand": "Mercedes-Benz",
         "Date": "1939",
         "Horsepower": "240",
@@ -1168,7 +1168,7 @@ export const auto = [
         "Class": "Minivan"
     },
     {
-        "Model": "Mercedes-Benz 680S Torpedo Roadster",
+        "Model": "Mercedes-Benz 680S",
         "Brand": "Mercedes-Benz",
         "Date": "1928",
         "Horsepower": "240",
@@ -1176,7 +1176,7 @@ export const auto = [
         "Class": "SUV"
     },
     {
-        "Model": "Mercedes-Benz SSK Roadster",
+        "Model": "Mercedes-Benz SSK",
         "Brand": "Mercedes-Benz",
         "Date": "1929",
         "Horsepower": "240",
@@ -1200,7 +1200,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Oldsmobile Limited Five-Passenger Touring",
+        "Model": "Oldsmobile Limited ",
         "Brand": "General Motors",
         "Date": "1912",
         "Horsepower": "103",
@@ -1208,7 +1208,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Packard Twelve Runabout Speedster",
+        "Model": "Packard Twelve ",
         "Brand": "Packard Motor",
         "Date": "1934",
         "Horsepower": "103",
@@ -1216,7 +1216,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Pontiac Bonneville Special",
+        "Model": "Pontiac Bonneville",
         "Brand": "Packard Motor",
         "Date": "1954",
         "Horsepower": "138",
@@ -1224,7 +1224,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Porsche 550/1500 RS Spyder",
+        "Model": "Porsche 550/1500",
         "Brand": "Porsche",
         "Date": "1955",
         "Horsepower": "138",
@@ -1232,7 +1232,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Porsche 911 Carrera RSR Turbo 2.14",
+        "Model": "Porsche 911 Carrera",
         "Brand": "Porsche",
         "Date": "1974",
         "Horsepower": "138",
@@ -1240,7 +1240,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Porsche 917 Interserie Spyder",
+        "Model": "Porsche 917 Interserie",
         "Brand": "Porsche",
         "Date": "1970",
         "Horsepower": "173",
@@ -1280,7 +1280,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Rolls-Royce 10 hp Two-Seater",
+        "Model": "Rolls-Royce 10 hp",
         "Brand": "Rolls-Royce",
         "Date": "1904",
         "Horsepower": "194",
@@ -1288,7 +1288,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Shelby Cobra 427 Super Snake",
+        "Model": "Shelby Cobra 427",
         "Brand": "AC Cars",
         "Date": "1966",
         "Horsepower": "280",
@@ -1296,7 +1296,7 @@ export const auto = [
         "Class": "Wagon"
     },
     {
-        "Model": "Shelby Daytona Cobra Coupe",
+        "Model": "Shelby Daytona ",
         "Brand": "AC Cars",
         "Date": "1965",
         "Horsepower": "315",
@@ -1304,7 +1304,7 @@ export const auto = [
         "Class": "Wagon"
     },
     {
-        "Model": "Talbot-Lago Lago Special Teardrop Coupe",
+        "Model": "Talbot-Lago Lago ",
         "Brand": "Talbot-Lago",
         "Date": "1938",
         "Horsepower": "260",
@@ -1320,7 +1320,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Talbot-Lago T150C Lago Speciale Teardrop Coupe",
+        "Model": "Talbot-Lago T150C",
         "Brand": "Talbot-Lago",
         "Date": "1938",
         "Horsepower": "260",
@@ -1328,7 +1328,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Talbot-Lago T150C SS Teardrop CoupÃ©",
+        "Model": "Talbot-Lago T150C",
         "Brand": "Talbot-Lago",
         "Date": "1938",
         "Horsepower": "255",
@@ -1336,7 +1336,7 @@ export const auto = [
         "Class": "Sedan"
     },
     {
-        "Model": "Talbot-Lago T150C SS Teardrop coupe",
+        "Model": "Talbot-Lago T150C",
         "Brand": "Talbot-Lago",
         "Date": "1939",
         "Horsepower": "340",
