@@ -24,8 +24,8 @@
             </div>
 
             <div id="colorCont" draggable="true" class="drag" style="margin-left: 5px; width: 85px; text-align: center">
-                <div class="" style="background-color: #6d6c6c">Color</div>
-                <div id="color"></div>
+                <div class="" style="background-color: #6d6c6c">Class</div>
+                <div id="class"></div>
             </div>
 
             <div id="transmissionCont" draggable="true" class="drag" style="margin-left: 5px; width: 100px; text-align: center">
@@ -38,9 +38,9 @@
                 <div id="hp"></div>
             </div>  
             </div>
-            <div id="delCont" draggable="true" class="drag" style="margin-left: 5px; width: 60px; text-align: center">
+            <div id="delCont" draggable="true" style="margin-left: 5px; width: 60px; text-align: center">
                 <div class="" style="background-color: #58e958; text-align: center;" id="addNewCar">+</div>
-                <div id="del"></div>
+                <div id="del" ></div>
             </div> 
 
         </div>
@@ -64,14 +64,38 @@
             <div>
                 <form>
                     <label> Model <input type="text" id="addModel"> </label>
-                    <label> Color <input type="text" id="addColor"> </label>
+                    <label> Class <input type="text" id="addClass"> </label>
                     <label> HP <input type="text" id="addHP"> </label>
                 </form>
             </div>
             <button type="button" id="createNewCar"> Create </button>
         </div>
 
+
+        <div id="editCarWidow" style="margin-top: 30px; display: none">
+            <div>
+                <form>
+                    <label>Brand</label>
+                    <label> <input type="text" id="editBrand" > </label>
+                    <label> Date </label>
+                    <label> <input type="text" id="editDate"> </label>
+                    <label>Transmission </label>
+                    <label> <input type="text" id="editTransmission"> </label>
+                </form>
+            </div>
+            <div>
+                <form>
+                    <label> Model <input type="text" id="editModel"> </label>
+                    <label> Class <input type="text" id="editClass"> </label>
+                    <label> HP <input type="text" id="editHP"> </label>
+                </form>
+            </div>
+            <button type="button" id="editCarBtn"> Edit </button>
+        </div>
+
     </div>
+
+   
 
 <script src="../dist/boundle.js"></script>
 </body>

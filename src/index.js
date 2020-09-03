@@ -1,7 +1,7 @@
 import './styles/index.css';
-import {auto} from "../carsJson/autoJson.js";
+import { auto } from "../carsJson/autoJson.js";
 
-let autoArrId = auto.map((el) => {
+const autoArrId = auto.map((el) => {
     el.id = Math.floor(Math.random() * 9999999);
     return el;
 });
@@ -13,14 +13,23 @@ const addBrand = document.getElementById('addBrand');
 const addDate = document.getElementById('addDate');
 const addTransmission = document.getElementById('addTransmission');
 const addModel = document.getElementById('addModel');
-const addColor = document.getElementById('addColor');
+const addClass = document.getElementById('addClass');
 const addHP = document.getElementById('addHP');
 const createNewCar = document.getElementById('createNewCar');
+
+const editBrand = document.getElementById('editBrand');
+const editDate = document.getElementById('editDate');
+const editTransmission = document.getElementById('editTransmission');
+const editModel = document.getElementById('editModel');
+const editClass = document.getElementById('editClass');
+const editHP = document.getElementById('editHP');
+const editCar = document.getElementById('editCar');
+const editCarBtn = document.getElementById('editCarBtn');
 
 const brand = document.getElementById('brand');
 const model = document.getElementById('model');
 const date = document.getElementById('date');
-const color = document.getElementById('color');
+const CLASS = document.getElementById('class');
 const transmission = document.getElementById('transmission');
 const hp = document.getElementById('hp');
 const del = document.getElementById('del');
@@ -42,17 +51,17 @@ function createSlice() {
         slice2 = 10;
     }
     getTableArr = getCars.slice(slice1, slice2);
-     clearTable();
+    clearTable();
     getTableArr.forEach((el) => createTableBody(el));
     initDeleteListeners();
     initPaging();
 }
 
-function clearTable () {
+function clearTable() {
     brand.innerHTML = "";
     model.innerHTML = "";
     date.innerHTML = "";
-    color.innerHTML = "";
+    CLASS.innerHTML = "";
     transmission.innerHTML = "";
     hp.innerHTML = "";
     del.innerHTML = "";
@@ -68,27 +77,35 @@ function createTableBody(el) {
     boxModel.classList.add('model');
     const boxDate = document.createElement('div');
     boxDate.innerHTML = el.Date;
-    const boxColor = document.createElement('div');
-    boxColor.innerHTML = el.Color;
+    const boxClass = document.createElement('div');
+    boxClass.innerHTML = el.Class;
     const boxTransmission = document.createElement('div');
     boxTransmission.innerHTML = el.Transmission;
     const boxHP = document.createElement('div');
     boxHP.innerHTML = el.Horsepower + 'hp';
+    const BOXEDITDELETE = document.createElement('div');
+    BOXEDITDELETE.classList.add('boxEditDelete');
+    const BOXEDIT = document.createElement('div');
+    BOXEDIT.setAttribute('id', el.id);
+    BOXEDIT.innerHTML = '<i><img id="1" src="../svg/edit.svg" style="width: 12px" alt=""></i>';
     const boxDelete = document.createElement('div');
     boxDelete.setAttribute('id', el.id);
-    boxDelete.innerHTML = '<i><img src="../svg/delete.svg" style="width: 12px" alt=""></i>';
+    boxDelete.innerHTML = '<i><img id="2" src="../svg/delete.svg" style="width: 12px" alt=""></i>';
+
     brand.appendChild(boxBrand);
     model.appendChild(boxModel);
     date.appendChild(boxDate);
-    color.appendChild(boxColor);
+    CLASS.appendChild(boxClass);
     transmission.appendChild(boxTransmission);
     hp.appendChild(boxHP);
-    del.appendChild(boxDelete);
+    BOXEDITDELETE.appendChild(BOXEDIT);
+    BOXEDITDELETE.appendChild(boxDelete);
+    del.appendChild(BOXEDITDELETE);
 }
 
 function initPaging() {
     const buttonsDiv = document.getElementById('buttonsDiv');
-        buttonsDiv.innerHTML = '';
+    buttonsDiv.innerHTML = '';
     for (let i = 0; i < numOfTables; i++) {
         const button = document.createElement('input');
         button.type = 'button';
@@ -105,7 +122,7 @@ function buttonClick(e) {
 }
 
 document.getElementById('back').addEventListener('click', () => {
-    if(btnNum) {
+    if (btnNum) {
         btnNum--;
         createSlice();
     }
@@ -113,7 +130,7 @@ document.getElementById('back').addEventListener('click', () => {
 
 
 document.getElementById('next').addEventListener('click', () => {
-    if(btnNum < numOfTables - 1) {
+    if (btnNum < numOfTables - 1) {
         btnNum++;
         createSlice();
     }
@@ -122,54 +139,57 @@ document.getElementById('next').addEventListener('click', () => {
 function initDeleteListeners() {
     const deleteImg = document.querySelectorAll('img');
     deleteImg.forEach((el) => {
-        el.addEventListener('click', () => {
-            const deleteWindow = document.createElement('div');
-            deleteWindow.classList.add('deleteWindow');
-            const text = document.createElement('p');
-            text.innerHTML = 'Are you sure you want to delete?';
-            const btnDiv = document.createElement('div');
-            btnDiv.classList.add('btnDiv');
+        if (el.id === '2') {
+            el.addEventListener('click', () => {
+                const deleteWindow = document.createElement('div');
+                deleteWindow.classList.add('deleteWindow');
+                const text = document.createElement('p');
+                text.innerHTML = 'Are you sure you want to delete?';
+                const btnDiv = document.createElement('div');
+                btnDiv.classList.add('btnDiv');
 
 
-            const deleteBtn = document.createElement('input');
-            deleteBtn.type = 'button';
-            deleteBtn.value = 'Delete';
-            deleteBtn.addEventListener('click', () => {
-                const closestTr = el.closest('div');
-                getCars = getCars.filter( (obj) => {
-                    return obj.id !== +closestTr.id;
+                const deleteBtn = document.createElement('input');
+                deleteBtn.type = 'button';
+                deleteBtn.value = 'Delete';
+                deleteBtn.addEventListener('click', () => {
+                    const closestTr = el.closest('div');
+                    getCars = getCars.filter((obj) => {
+                        return obj.id !== +closestTr.id;
+                    });
+
+                    localStorage.setItem('cars', JSON.stringify(getCars));
+                    numOfTables = Math.ceil(getCars.length / 10);
+                    initPaging();
+                    createSlice();
+                    if (getTableArr.length === 0) {
+                        btnNum--;
+                        createSlice();
+                    } else {
+                        createSlice();
+                    }
+                    let deleteWindow = document.getElementsByClassName('deleteWindow');
+                    while (deleteWindow.length > 0) deleteWindow[0].remove();
+
                 });
 
-                localStorage.setItem('cars', JSON.stringify(getCars));
-                numOfTables = Math.ceil(getCars.length / 10);
-                initPaging();
-                createSlice();
-                if (getTableArr.length === 0) {
-                    btnNum--;
-                    createSlice();
-                } else {
-                    createSlice();
-                }
-                let deleteWindow = document.getElementsByClassName('deleteWindow');
-                while (deleteWindow.length > 0) deleteWindow[0].remove();
 
-            });
-            
-            
-            const cancelBtn = document.createElement('input');
-            cancelBtn.type = 'button';
-            cancelBtn.value = 'Cancel';
-            cancelBtn.addEventListener('click', () => {
-                let deleteWindow = document.getElementsByClassName('deleteWindow');
-                while (deleteWindow.length > 0) deleteWindow[0].remove();
-            });
-            deleteWindow.appendChild(text);
-            btnDiv.appendChild(deleteBtn);
-            btnDiv.appendChild(cancelBtn);
-            deleteWindow.appendChild(btnDiv);
-            container.appendChild(deleteWindow);
-        })
+                const cancelBtn = document.createElement('input');
+                cancelBtn.type = 'button';
+                cancelBtn.value = 'Cancel';
+                cancelBtn.addEventListener('click', () => {
+                    let deleteWindow = document.getElementsByClassName('deleteWindow');
+                    while (deleteWindow.length > 0) deleteWindow[0].remove();
+                });
+                deleteWindow.appendChild(text);
+                btnDiv.appendChild(deleteBtn);
+                btnDiv.appendChild(cancelBtn);
+                deleteWindow.appendChild(btnDiv);
+                container.appendChild(deleteWindow);
+            })
+        }
     })
+
 }
 
 initDeleteListeners();
@@ -183,12 +203,12 @@ drag.forEach(draggable => {
     draggable.addEventListener('dragstart', () => {
         draggable.classList.add('dragging');
     })
-    draggable.addEventListener('dragend', () =>{
+    draggable.addEventListener('dragend', () => {
         draggable.classList.remove('dragging');
     })
 });
 
-table.addEventListener('dragover', () =>{
+table.addEventListener('dragover', () => {
     const draggable = document.querySelector('.drag');
     table.appendChild(draggable);
 });
@@ -202,27 +222,88 @@ addNewCar.addEventListener('click', () => {
 })
 
 
-    createNewCar.addEventListener('click', ()=> {
-        const newCarObj = {};
-        newCarObj.Brand = addBrand.value;
-        newCarObj.Date = addDate.value;
-        newCarObj.Transmission = addTransmission.value;
-        newCarObj.Model = addModel.value;
-        newCarObj.Color = addColor.value;
-        newCarObj.Horsepower = addHP.value;
-        newCarObj.id = Math.floor(Math.random() * 999999);
+createNewCar.addEventListener('click', () => {
+    const newCarObj = {};
+    newCarObj.Brand = addBrand.value;
+    newCarObj.Date = addDate.value;
+    newCarObj.Transmission = addTransmission.value;
+    newCarObj.Model = addModel.value;
+    newCarObj.CLASS = addClass.value;
+    newCarObj.Horsepower = addHP.value;
+    newCarObj.id = Math.floor(Math.random() * 999999);
 
-        getCars.unshift (newCarObj);
-        localStorage.setItem('cars', JSON.stringify(getCars));
-        numOfTables = Math.ceil(getCars.length / 10);
-        createSlice();
-        initPaging();
-        addCarWidow.style.display = 'none';
-        addBrand.value = '';
-        addDate.value = '';
-        addTransmission.value = '';
-        addModel.value = '';
-        addColor.value = '';
-        addHP.value = '';
-    })
+    getCars.unshift(newCarObj);
+    localStorage.setItem('cars', JSON.stringify(getCars));
+    numOfTables = Math.ceil(getCars.length / 10);
+    createSlice();
+    initPaging();
+    resetValue()
+})
 
+function resetValue() {
+    addCarWidow.style.display = 'none';
+    addBrand.value = '';
+    addDate.value = '';
+    addTransmission.value = '';
+    addModel.value = '';
+    addClass.value = '';
+    addHP.value = '';
+}
+
+//edit
+
+
+//open edit window
+let editId = null;
+const editCarWindow = document.getElementById('editCarWidow');
+const deleteImg = document.querySelectorAll('img');
+deleteImg.forEach((el) => {
+    if (el.id === '1') {
+        el.addEventListener('click', () => {
+            const GETDIVID = el.closest('div');
+            let editDiv = null;
+            for (let el of getCars) {
+                if (el.id === +GETDIVID.id) {
+                    editDiv = el;
+                    break
+                }
+            }
+            editCarWindow.style.display = 'block';
+            editBrand.value = editDiv.Brand;
+            editModel.value = editDiv.Model;
+            editDate.value = editDiv.Date;
+            editClass.value = editDiv.Class;
+            editTransmission.value = editDiv.Transmission;
+            editHP.value = editDiv.Horsepower;
+            editId = editDiv.id;
+            console.log(editId)
+        })
+    }
+})
+
+//update
+
+
+
+editCarBtn.addEventListener('click', ()=> {
+
+    const editObj = {};
+    editObj.Brand = editBrand.value;
+    editObj.Model = editModel.value;
+    editObj.Date = editDate.value;
+    editObj.Class = editClass.value;
+    editObj.Transmission = editTransmission.value;
+    editObj.Horsepower = editHP.value;
+    editObj.Id = editId;
+    console.log(editObj)
+    
+    for (let el of getCars) {
+        if (el.id === editObj.Id) {
+            el = editObj;
+            console.log(el);
+            console.log(ed)
+            createSlice();
+        }
+    }
+
+})
