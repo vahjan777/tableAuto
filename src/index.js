@@ -237,10 +237,10 @@ createNewCar.addEventListener('click', () => {
     numOfTables = Math.ceil(getCars.length / 10);
     createSlice();
     initPaging();
-    resetValue()
+    resetValueAdd()
 })
 
-function resetValue() {
+function resetValueAdd() {
     addCarWidow.style.display = 'none';
     addBrand.value = '';
     addDate.value = '';
@@ -256,8 +256,10 @@ function resetValue() {
 //open edit window
 let editId = null;
 const editCarWindow = document.getElementById('editCarWidow');
+
 const deleteImg = document.querySelectorAll('img');
 deleteImg.forEach((el) => {
+    debugger;
     if (el.id === '1') {
         el.addEventListener('click', () => {
             const GETDIVID = el.closest('div');
@@ -294,16 +296,28 @@ editCarBtn.addEventListener('click', ()=> {
     editObj.Class = editClass.value;
     editObj.Transmission = editTransmission.value;
     editObj.Horsepower = editHP.value;
-    editObj.Id = editId;
-    console.log(editObj)
-    
-    for (let el of getCars) {
-        if (el.id === editObj.Id) {
-            el = editObj;
-            console.log(el);
-            console.log(ed)
+    editObj.id = editId;
+
+    for (let el in getCars) {
+        if (getCars[el].id === editObj.id) {
+            getCars[el] = editObj;
+            localStorage.setItem('cars', JSON.stringify(getCars));
+            resetValueEdit()
             createSlice();
+            break;
         }
+        
     }
 
+    
 })
+
+function resetValueEdit() {
+    editCarWidow.style.display = 'none';
+    addBrand.value = '';
+    addDate.value = '';
+    addTransmission.value = '';
+    addModel.value = '';
+    addClass.value = '';
+    addHP.value = '';
+}
